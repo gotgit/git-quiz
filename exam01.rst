@@ -33,8 +33,8 @@
 
    a) ``git add -A``
    b) ``git add -u``
-   b) ``git add -p``
-   b) ``git add -i``
+   c) ``git add -p``
+   d) ``git add -i``
 
 6. 我使用和其他人不一样的IDE软件，总是在目录下生成以 ``.xx`` 为后缀的临时文件。如何避免把此类文件添加到版本库中呢？
 
@@ -121,4 +121,58 @@
     d) 没人关心提交说明，所以提交说明写得比提交内容还多是浪费时间。
 
 18. 发现Bug出现在文件 ``time.c`` 第50行，使用下面的哪条命令可以迅速定位是谁在哪个提交引发的Bug？
-    
+   
+    a) ``git log -p time.c``
+    b) ``git diff --stat HEAD^ -- time.c``
+    c) ``git bisect start``
+    d) ``git blame -L50,+1 time.c``
+
+19. 工作在特性分支，常常因为执行 ``git push`` 发生 master 分支因落后于远程版本库对应分支而报 non-fast-forward 错误。设置仅推送当前分支可避免此类问题。下面操作正确的是：_____
+
+    a) ``git config --global push.default upstream``
+    b) ``git config --global pull.rebase true``
+    c) ``git config --global receive.denyDeletes true``
+    d) ``git config --global pager.status true``
+
+20. 关于对象库（.git/objects）说法错误的是：_____
+
+    a) 两个内容相同文件名不同的文件，在对象库中仅有一个拷贝。
+    b) 删除文件后，再通过添加相同文件找回，不会造成版本库的冗余。
+    c) 对象库并非一直保持最优存储，而是通过周期性地执行 ``git gc`` 优化版本库。
+    d) 对象库执行 ``git gc`` 操作后，reflog 会被清空导致其中记录的未跟踪提交及指向的文件被丢弃。
+
+21. 完成特性开发，请求项目管理者审核，如何更好地将创建变更日志以通知管理者？
+
+    a) ``git log origin/master..``
+    b) ``git diff-tree origin/master..``
+    c) ``git request-pull origin/master URL-of-your-repo``
+    d) ``git diff --stat origin/master``
+
+22. 关于子模组错误的说法是：_____
+
+    a) 克隆父版本，默认不会克隆子模组版本库。
+    b) 子模组可以嵌套。执行 ``git submodule update --recursive`` 可对嵌套子模组进行更新。
+    c) 子模组检出处于分离头指针状态（gitlink的指向），在子模组中工作需要手动切换分支。
+    d) 子模组和父版本的新提交，要先推送父版本，后推送子模组。
+
+23. 显示工作区中哪些文件被忽略，可用命令：_____
+
+    a) ``git status -s``
+    b) ``git status --ignored -s``
+    c) ``git stauts -v``
+    d) ``git clean -n``
+
+24. 操作HTTPS协议的版本库时报告证书错误，无法继续操作。下面的操作中那个无效？
+
+    a) 执行 ``git config --global http.sslVerify false`` 。
+    b) 执行 ``export GIT_SSL_NO_VERIFY=true`` 。
+    c) 换用 SSH 或者 HTTP 协议。
+    d) 执行 ``git config --global core.autocrlf input`` 。
+
+25. 关于 ``git diff`` 命令错误的说法是：____
+
+    a) ``git diff`` 可以在版本库之外执行，就像 GNU diff 命令一样操作，而且提供对二进制文件的支持。
+    b) ``git diff --binary`` 提供对二进制文件的支持。
+    c) ``git diff`` 格式的补丁文件需要使用 ``git apply`` 命令应用。
+    d) ``git diff`` 命令无输出，说明提交列表为空，无需提交。
+
