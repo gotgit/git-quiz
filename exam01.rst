@@ -1,5 +1,5 @@
-Git练习题
-===========
+Git练习题（A）
+===============
 
 1. 如果提示提交内容为空、不能提交，则最为合适的处理方式是：_____
 
@@ -8,26 +8,12 @@ Git练习题
    c) 执行 ``git status`` 查看状态，再执行 ``git add`` 命令选择要提交的文件，然后提交。
    d) 执行 ``git commit --amend`` 进行修补提交。
 
-1. 如果刚刚完成的提交说明写错了，应该如何操作？ _____
-
-   a) 执行 ``git commit -m "message..."`` 重写提交说明。
-   b) 执行 ``git reset --hard HEAD^`` ，丢弃最新提交。
-   c) 执行 ``git commit --amend`` 进行修补提交。
-   d) 执行 ``git revert HEAD`` 反转最新提交。
-
 2. 如果把项目中文件 ``hello.c`` 的内容破坏了，如何使其还原至原始版本？ _____
 
    a) ``git reset -- hello.c``
    b) ``git checkout HEAD -- hello.c``
    c) ``git revert hello.c``
    d) ``git update hello.c``
-
-2. 如果项目中文件 ``Hello.java`` 被不小心从工作区删除了，下面哪个命令可以找回该文件？ _____
-
-   a) ``git revert Hello.java``
-   b) ``git update Hello.java``
-   c) ``git reset -- Hello.java``
-   d) ``git checkout HEAD -- Hello.java``
 
 3. 修改的文档 ``meeting.doc`` 尚未提交，因为错误地执行了 ``git reset --hard`` 导致数据丢失。丢失的数据能找回么？ _____
 
@@ -36,21 +22,7 @@ Git练习题
    c) 不能。因为未提交所以无法找回。
    d) 不确定。如果在重置前执行了 ``git add`` 命令将 ``meeting.doc`` 加入了暂存区，则可以在对象库中处于悬空状态的文件中找到。
 
-3. 修补提交导致之前提交中的文件 ``addressbook.txt`` 的重要数据丢失，能找回么？什么方法最好？ _____
-
-   a) 能找回。用 ``git checkout HEAD@{1} -- addressbook.txt`` 命令。
-   b) 不能找回，因为提交丢失了。
-   c) 能找回。用 ``git fsck`` 找到处于悬空状态的对象，其中一个就是 ``addressbook.txt`` 文件。
-   d) 能找回。用 ``git checkout HEAD^ -- addressbook.txt`` 命令。
-
 4. 仅将工作区中修改的文件添加到暂存区（新增文件不添加），以备提交，用什么命令标记最快？ _____
-
-   a) ``git add -A``
-   b) ``git add -u``
-   c) ``git add -p``
-   d) ``git add -i``
-
-4. 将工作区中所有文件添加到暂存区（忽略文件除外），以备提交，用什么命令标记最快？ _____
 
    a) ``git add -A``
    b) ``git add -u``
@@ -64,13 +36,6 @@ Git练习题
    c) ``git checkout HEAD^^ .``
    d) ``git commit --amend``
 
-5. 下面哪一个命令会改变提交历史？ _____
-
-   a) ``git revert HEAD^^``
-   b) ``git reset --hard HEAD``
-   c) ``git cherry-pick a32c67d``
-   d) ``git rebase -i HEAD^^``
-
 6. 我使用和其他人不一样的IDE软件，总是在目录下生成以 ``.xx`` 为后缀的临时文件。如何避免由于自己的误操作导致此类文件被添加到版本库中呢？ _____
 
    a) 向版本库中添加一个 ``.gitignore`` 文件，其中包含一条内容为 ``*.xx`` 的记录。
@@ -78,26 +43,12 @@ Git练习题
    c) 执行 ``git clean -f`` 删除临时性文件。
    d) 更换另外一款IDE软件。
 
-6. 向版本库中添加一个 ``.gitignore`` 文件，其中包含 ``*.txt`` 的内容。若版本库中已有文件 ``README.txt`` 。则下列说法正确的是： _____
-
-   a) 文件 ``README.txt`` 被删除。
-   b) 文件 ``README.txt`` 会显示合并冲突。
-   c) 对文件 ``README.txt`` 的任何更改将被忽略。
-   d) 文件 ``README.txt`` 不受忽略文件 ``.gitignore`` 的影响，修改状态会被追踪。
-   
 7. 项目跨平台导致文件中的换行符不一致。其中有 Linux 格式换行符（0A），也有DOS格式换行符（0D 0A）。要如何避免此类情况呢？ _____
 
    a) 向版本库中添加一个 ``.gitattributes`` 文件，在其中包含一条内容为 ``* text=auto`` 的设置。
    b) 修改 ``/etc/gitattributes`` 文件，在其中包含一条内容为 ``* text=auto`` 的设置。
    c) 执行命令 ``git config --global core.autocrlf true`` 。
    d) 执行命令 ``git config --global core.autocrlf input`` 。
-
-7. 项目跨平台会因为文件名是否区分大小写，导致文件冲突。下面说法正确的是： _____
-
-   a) 在大小写不敏感的Linux系统上设置配置变量 ``core.ignorecase`` 值为 ``false`` 。
-   b) 在大小写不敏感的Windows系统上设置配置变量 ``core.ignorecase`` 值为 ``true`` 。
-   c) 在大小写不敏感的Windows系统上设置配置变量 ``core.ignorecase`` 值为 ``false`` 。
-   d) 在大小写敏感的Linux系统上设置配置变量 ``core.ignorecase`` 值为 ``true`` 。
 
 8. 下列对于版本库授权说法正确的是：_____
 
@@ -113,26 +64,12 @@ Git练习题
    c) ``git revert a2387``
    d) ``git reset --hard a2387^``
 
-9. 发现最新提交有错误，如果该提交已经被推送至远程服务器，如何在不改变历史的情况下撤销错误的提交？ _____
-
-   a) ``git rebase -i HEAD^ ; git push -f``
-   b) ``git checkout HEAD^ -- . ; git push``
-   c) ``git revert HEAD ; git push``
-   d) ``git reset --hard HEAD^ ; git push -f``
-
 10. 从版本库中的历史提交中彻底移除ID为 ``a2387`` 的提交，用什么操作？ _____
 
     a) ``git reset --hard a2387^``
     b) ``git checkout a2387^ -- .``
     c) ``git revert a2387``
     d) ``git rebase --onto a2387^ a2387 HEAD``
-
-10. 从版本库中的历史提交中彻底移除倒数第二个（前一个）提交，？ _____
-
-    a) ``git reset --hard HEAD^^``
-    b) ``git checkout HEAD^^ -- .``
-    c) ``git revert HEAD^``
-    d) ``git rebase --onto HEAD^^ HEAD^ HEAD``
 
 11. 所有改动的文件都已加入暂存区，若希望将其中的 ``other.py`` 文件下次再提交，如何操作？ _____
 
@@ -141,23 +78,9 @@ Git练习题
     c) ``git checkout HEAD other.py``
     d) ``git reset -- other.py``
 
-11. 所有改动的文件都已加入暂存区，若希望将其中的 ``other.py`` 文件下次再提交，如何操作？ _____
-
-    a) ``git rm --cached other.py``
-    b) ``git checkout -- other.py``
-    c) ``git revert -- other.py``
-    d) ``git reset -- other.py``
-
 12. 若产品的版本号显示为 ``1.7.10.rc0-33-g9678d-dirty`` ，可以判断出此版本号是如何生成的么？ _____
 
     a) ``git describe --tags --always --dirty``
-    b) ``git describe``
-    c) ``git name-rev HEAD``
-    d) ``git --version``
-
-12. 若产品的版本号显示为 ``1.7.10.rc0-33-g9678d`` ，可以判断出此版本号是如何生成的么？ _____
-
-    a) ``git log -1 --stat HEAD``
     b) ``git describe``
     c) ``git name-rev HEAD``
     d) ``git --version``
@@ -169,26 +92,12 @@ Git练习题
     c) 可以通过 ``git clone --single-branch`` 命令实现只克隆一个分支。
     d) 克隆出的工作区中执行 ``git log``\ 、\ ``git status``\ 、\ ``git checkout``\ 、\ ``git commit``\ 等操作不会去访问远程版本库。
 
-13. 对于命令 ``git push`` 的默认行为，说法\ **错误**\ 的是：____
-
-    a) 当前分支总是会被推送。
-    b) 会推送本地和远程共有的分支。
-    c) 若远程版本库为空（刚初始化完毕），不带参数地执行 ``git push`` 不会有分支被推送，但也不会报错。
-    d) 本地创建的里程碑（tag）不会被推送。
-
 14. 关于删除分支 ``XX`` ，下列说法正确的是： _____
 
     a) 执行 ``git branch -D XX`` 删除分支，总是能成功。
     b) 执行 ``git push origin :XX`` 来删除远程版本库的 ``XX`` 分支。
     c) 远程版本库删除的分支，在执行 ``git fetch`` 时本地分支自动删除。
     d) 本地删除的分支，执行 ``git push`` 时，远程分支亦自动删除。
-
-14. 关于删除远程分支 ``XX`` ，下列说法正确的是： _____
-
-    a) 执行 ``git branch -D XX`` 删除远程版本库的 ``XX`` 分支。
-    b) 执行 ``git push origin :`` 来删除远程分支。
-    c) 远程版本库删除的分支，在执行 ``git fetch`` 时本地分支自动删除。
-    d) 执行 ``git push origin :XX`` 来删除远程分支。
 
 15. 下面的操作中哪一个不能确认维护分支 ``maint`` 上所有的 bugfix 提交均已合并至当前分支 ``master`` 中。 _____
 
@@ -197,26 +106,12 @@ Git练习题
     c) 新版本发布，在 ``maint`` 分支执行 ``git merge --ff-only master`` 成功。
     d) 在 ``maint`` 分支成功地执行 ``git merge master``\ 。
 
-15. 关于Git提交说明，错误的说法是：_____
-
-    a) Git提交说明建议采用“50/72原则”。其中提交说明的第一行会作为邮件标题、软件变更记录中的摘要，不宜太长。
-    b) 在提交说明中加入 ``Signed-off-by: User <email>`` 的目的是为了避免修补提交导致原始作者跟踪不到，并且方便对所有该提交的贡献者进行追踪。
-    c) 提交说明中若出现非 ASCII字符（如中文）且平台内码非 UTF-8 时，需要设置 ``i18n.commitEncoding`` 配置变量以便在跨平台时提交说明不会出现乱码。
-    d) 没人关心提交说明，所以提交说明写得比提交内容还多是浪费时间。
-
 16. 一个图片文件 ``logo.png`` 冲突了，如何取出他人的版本。 _____
 
     a) ``git show :0:./logo.png > logo.png-theirs``
     b) ``git show :1:./logo.png > logo.png-theirs``
     c) ``git show :2:./logo.png > logo.png-theirs``
     d) ``git show :3:./logo.png > logo.png-theirs``
-
-16. 一个图片文件 ``logo.png`` 冲突了，如何取出我们的版本。 _____
-
-    a) ``git show :0:./logo.png > logo.png-mine``
-    b) ``git show :1:./logo.png > logo.png-mine``
-    c) ``git show :2:./logo.png > logo.png-mine``
-    d) ``git show :3:./logo.png > logo.png-mine``
 
 17. 工作在特性分支，常常因为执行 ``git push`` 默认推送所有本地和远程共有分支，导致非当前分支报告 non-fast-forward 错误。如果设置只推送当前分支可避免此类问题。下面操作正确的是：_____
 
@@ -225,27 +120,12 @@ Git练习题
     c) ``git config --global receive.denyDeletes true``
     d) ``git config --global pager.status true``
 
-17. 发现Bug出现在文件 ``time.c`` 第50行，使用下面的哪条命令可以迅速定位是谁在哪个提交引发的Bug？ _____
-   
-    a) ``git log -p time.c``
-    b) ``git diff --stat HEAD^ -- time.c``
-    c) ``git bisect start``
-    d) ``git blame -L50,+1 time.c``
-
 18. 关于对象库（.git/objects）说法错误的是：_____
 
     a) 两个内容相同文件名不同的文件，在对象库中仅有一个拷贝。
     b) 删除文件后，再通过添加相同文件找回，不会造成版本库的冗余。
     c) 对象库并非一直保持最优存储，而是通过周期性地执行 ``git gc`` 优化版本库。
     d) 对象库执行 ``git gc`` 操作后，reflog 会被清空导致其中记录的未跟踪提交及指向的文件被丢弃。
-
-
-18. 完成特性开发，请求项目管理者审核，如何更好地将创建变更日志以通知管理者？ _____
-
-    a) ``git log origin/master..``
-    b) ``git diff-tree origin/master..``
-    c) ``git request-pull origin/master URL-of-your-repo``
-    d) ``git diff --stat origin/master``
 
 19. 关于子模组\ **错误**\ 的说法是：_____
 
@@ -254,26 +134,12 @@ Git练习题
     c) 子模组检出处于分离头指针状态（gitlink的指向），在子模组中工作需要手动切换分支。
     d) 子模组和父版本库的新提交，要先推送父版本库，后推送子模组。
 
-19. 操作HTTPS协议的版本库时报告证书错误，无法继续操作。下面的操作中那个\ **无效**\ ？ _____
-
-    a) 执行 ``git config --global http.sslVerify false`` 。
-    b) 执行 ``export GIT_SSL_NO_VERIFY=true`` 。
-    c) 换用 SSH 或者 HTTP 协议。
-    d) 执行 ``git config --global core.autocrlf input`` 。
-
 20. 当一个提交说明显示为 ``souce code refactor (fix #529)`` ，下面哪个说法是正确的？ _____
 
     a) 这个提交只是代码重构，并未修复任何东西，因此没有改变版本库的提交历史。
     b) 这个提交修正了第529号提交，没有改变版本库的提交历史。
     c) 这个提交撤销了第529号提交，改变了版本库的提交历史。
     d) 这个提交和项目的缺陷跟踪平台（如Redmine）关联，并会更新相关问题的状态。
-
-20. 当一个提交说明显示为 ``souce code refactor (see #529)`` ，下面哪个说法是正确的？ _____
-
-    a) 这个提交修正了第529号提交，没有改变版本库的提交历史。
-    b) 这个提交撤销了第529号提交，改变了版本库的提交历史。
-    c) 这个提交和项目的缺陷跟踪平台（如Redmine）关联，并会更新相关问题的状态。
-    d) 这个提交和项目的缺陷跟踪平台（如Redmine）关联。
 
 ..
    19. 显示工作区中哪些文件被忽略，可用命令：_____
