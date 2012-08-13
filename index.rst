@@ -6,20 +6,13 @@
 练习题 
 ====================================
 
-Contents:
+.. include:: README.rst
+
+目录:
+------
 
 .. toctree::
    :maxdepth: 2
 
    exam01
    exam02
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
