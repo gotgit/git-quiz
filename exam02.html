@@ -1,0 +1,255 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Git练习题（B） &mdash; Git Exam 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="static/default.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <link rel="top" title="Git Exam 1.0 documentation" href="index.html" />
+    <link rel="prev" title="Git练习题（A）" href="exam01.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="exam01.html" title="Git练习题（A）"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Git Exam 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="git-b">
+<h1>Git练习题（B）<a class="headerlink" href="#git-b" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>单项选择题<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>如果刚刚完成的提交说明写错了，应该如何操作？ _____<ol class="loweralpha">
+<li>执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;message...&quot;</span></tt> 重写提交说明。</li>
+<li>执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">HEAD^</span></tt> ，丢弃最新提交。</li>
+<li>执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">revert</span> <span class="pre">HEAD</span></tt> 反转最新提交。</li>
+<li>执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--amend</span></tt> 进行修补提交。</li>
+</ol>
+</li>
+<li>如果项目中文件 <tt class="docutils literal"><span class="pre">Hello.java</span></tt> 被不小心从工作区删除了，下面哪个命令可以找回该文件？ _____<ol class="loweralpha">
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">revert</span> <span class="pre">Hello.java</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">update</span> <span class="pre">Hello.java</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">HEAD</span> <span class="pre">--</span> <span class="pre">Hello.java</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--</span> <span class="pre">Hello.java</span></tt></li>
+</ol>
+</li>
+<li>修补提交导致之前提交中的文件 <tt class="docutils literal"><span class="pre">addressbook.txt</span></tt> 的重要数据丢失，能找回么？什么方法最好？ _____<ol class="loweralpha">
+<li>不能找回，因为提交丢失了。</li>
+<li>能找回。用 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">HEAD&#64;{1}</span> <span class="pre">--</span> <span class="pre">addressbook.txt</span></tt> 命令。</li>
+<li>能找回。用 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">fsck</span></tt> 找到处于悬空状态的对象，其中一个就是 <tt class="docutils literal"><span class="pre">addressbook.txt</span></tt> 文件。</li>
+<li>能找回。用 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">HEAD^</span> <span class="pre">--</span> <span class="pre">addressbook.txt</span></tt> 命令。</li>
+</ol>
+</li>
+<li>将工作区中所有文件添加到暂存区（忽略文件除外），以备提交，用什么命令标记最快？ _____<ol class="loweralpha">
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-u</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-p</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-i</span></tt></li>
+</ol>
+</li>
+<li>下面哪一个命令会改变提交历史？ _____<ol class="loweralpha">
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">revert</span> <span class="pre">HEAD^^</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">HEAD</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">-i</span> <span class="pre">HEAD^^</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">cherry-pick</span> <span class="pre">a32c67d</span></tt></li>
+</ol>
+</li>
+<li>向版本库中添加一个 <tt class="docutils literal"><span class="pre">.gitignore</span></tt> 文件，其中包含 <tt class="docutils literal"><span class="pre">*.txt</span></tt> 的内容。若版本库中已有文件 <tt class="docutils literal"><span class="pre">README.txt</span></tt> 。则下列说法正确的是： _____<ol class="loweralpha">
+<li>文件 <tt class="docutils literal"><span class="pre">README.txt</span></tt> 被删除。</li>
+<li>文件 <tt class="docutils literal"><span class="pre">README.txt</span></tt> 不受忽略文件 <tt class="docutils literal"><span class="pre">.gitignore</span></tt> 的影响，修改状态会被追踪。</li>
+<li>文件 <tt class="docutils literal"><span class="pre">README.txt</span></tt> 会显示合并冲突。</li>
+<li>对文件 <tt class="docutils literal"><span class="pre">README.txt</span></tt> 的任何更改将被忽略。</li>
+</ol>
+</li>
+<li>项目跨平台会因为文件名是否区分大小写，导致文件冲突。下面说法正确的是： _____<ol class="loweralpha">
+<li>在大小写敏感的Linux系统上设置配置变量 <tt class="docutils literal"><span class="pre">core.ignorecase</span></tt> 值为 <tt class="docutils literal"><span class="pre">true</span></tt> 。</li>
+<li>在大小写不敏感的Linux系统上设置配置变量 <tt class="docutils literal"><span class="pre">core.ignorecase</span></tt> 值为 <tt class="docutils literal"><span class="pre">false</span></tt> 。</li>
+<li>在大小写不敏感的Windows系统上设置配置变量 <tt class="docutils literal"><span class="pre">core.ignorecase</span></tt> 值为 <tt class="docutils literal"><span class="pre">true</span></tt> 。</li>
+<li>在大小写不敏感的Windows系统上设置配置变量 <tt class="docutils literal"><span class="pre">core.ignorecase</span></tt> 值为 <tt class="docutils literal"><span class="pre">false</span></tt> 。</li>
+</ol>
+</li>
+<li>下列对于版本库授权说法正确的是：_____<ol class="loweralpha">
+<li>只要通过授权后，便不能限制所推送的提交的署名作者，可以是任何人。</li>
+<li>除管理员外，版本库的创建者都可以为自己创建的版本库授权。</li>
+<li>如果没有向版本库的写入权限，就一定没有读取权限。</li>
+<li>可以为分支或路径设置不同的写入权限，但不能设置不同的读取权限。</li>
+</ol>
+</li>
+<li>发现最新提交有错误，如果该提交已经被推送至远程服务器，如何在不改变历史的情况下撤销错误的提交？ _____<ol class="loweralpha">
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">-i</span> <span class="pre">HEAD^</span> <span class="pre">;</span> <span class="pre">git</span> <span class="pre">push</span> <span class="pre">-f</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">revert</span> <span class="pre">HEAD</span> <span class="pre">;</span> <span class="pre">git</span> <span class="pre">push</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">HEAD^</span> <span class="pre">--</span> <span class="pre">.</span> <span class="pre">;</span> <span class="pre">git</span> <span class="pre">push</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">HEAD^</span> <span class="pre">;</span> <span class="pre">git</span> <span class="pre">push</span> <span class="pre">-f</span></tt></li>
+</ol>
+</li>
+<li>从版本库中的历史提交中彻底移除倒数第二个（前一个）提交，？ _____<ol class="loweralpha">
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">--onto</span> <span class="pre">HEAD^^</span> <span class="pre">HEAD^</span> <span class="pre">HEAD</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">HEAD^^</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">HEAD^^</span> <span class="pre">--</span> <span class="pre">.</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">revert</span> <span class="pre">HEAD^</span></tt></li>
+</ol>
+</li>
+<li>所有改动的文件都已加入暂存区，若希望将其中的 <tt class="docutils literal"><span class="pre">other.py</span></tt> 文件下次再提交，如何操作？ _____<ol class="loweralpha">
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">--cached</span> <span class="pre">other.py</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">--</span> <span class="pre">other.py</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">revert</span> <span class="pre">--</span> <span class="pre">other.py</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--</span> <span class="pre">other.py</span></tt></li>
+</ol>
+</li>
+<li>若产品的版本号显示为 <tt class="docutils literal"><span class="pre">1.7.10.rc0-33-g9678d</span></tt> ，可以判断出此版本号是如何生成的么？ _____<ol class="loweralpha">
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">-1</span> <span class="pre">--stat</span> <span class="pre">HEAD</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">name-rev</span> <span class="pre">HEAD</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">describe</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">--version</span></tt></li>
+</ol>
+</li>
+<li>对于命令 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></tt> 的默认行为，说法<strong>错误</strong>的是：____<ol class="loweralpha">
+<li>当前分支总是会被推送。</li>
+<li>会推送本地和远程共有的分支。</li>
+<li>若远程版本库为空（刚初始化完毕），不带参数地执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></tt> 不会有分支被推送。</li>
+<li>本地创建的里程碑（tag）不会被推送。</li>
+</ol>
+</li>
+<li>关于删除远程分支 <tt class="docutils literal"><span class="pre">XX</span></tt> ，下列说法正确的是： _____<ol class="loweralpha">
+<li>执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-D</span> <span class="pre">XX</span></tt> 删除远程版本库的 <tt class="docutils literal"><span class="pre">XX</span></tt> 分支。</li>
+<li>执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">:</span></tt> 来删除远程分支。</li>
+<li>远程版本库删除的分支，在执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">fetch</span></tt> 时本地分支自动删除。</li>
+<li>执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">:XX</span></tt> 来删除远程分支。</li>
+</ol>
+</li>
+<li>关于Git提交说明，错误的说法是：_____<ol class="loweralpha">
+<li>Git提交说明建议采用“50/72原则”。其中提交说明的第一行会作为邮件标题、软件变更记录中的摘要，不宜太长。</li>
+<li>在提交说明中加入 <tt class="docutils literal"><span class="pre">Signed-off-by:</span> <span class="pre">User</span> <span class="pre">&lt;email&gt;</span></tt> 的目的是为了避免修补提交导致原始作者跟踪不到，并且方便对所有该提交的贡献者进行追踪。</li>
+<li>没人关心提交说明，所以提交说明写得比提交内容还多是浪费时间。</li>
+<li>提交说明中若出现非 ASCII字符（如中文）且平台内码非 UTF-8 时，需要设置 <tt class="docutils literal"><span class="pre">i18n.commitEncoding</span></tt> 配置变量以便在跨平台时提交说明不会出现乱码。</li>
+</ol>
+</li>
+<li>一个图片文件 <tt class="docutils literal"><span class="pre">logo.png</span></tt> 冲突了，如何取出我们的版本。 _____<ol class="loweralpha">
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">show</span> <span class="pre">:1:./logo.png</span> <span class="pre">&gt;</span> <span class="pre">logo.png-mine</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">show</span> <span class="pre">:2:./logo.png</span> <span class="pre">&gt;</span> <span class="pre">logo.png-mine</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">show</span> <span class="pre">:3:./logo.png</span> <span class="pre">&gt;</span> <span class="pre">logo.png-mine</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">show</span> <span class="pre">:0:./logo.png</span> <span class="pre">&gt;</span> <span class="pre">logo.png-mine</span></tt></li>
+</ol>
+</li>
+<li>发现Bug出现在文件 <tt class="docutils literal"><span class="pre">time.c</span></tt> 第50行，使用下面的哪条命令可以迅速定位是谁在哪个提交引发的Bug？ _____<ol class="loweralpha">
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">-p</span> <span class="pre">time.c</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">--stat</span> <span class="pre">HEAD^</span> <span class="pre">--</span> <span class="pre">time.c</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">bisect</span> <span class="pre">start</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">blame</span> <span class="pre">-L50,+1</span> <span class="pre">time.c</span></tt></li>
+</ol>
+</li>
+<li>完成特性开发，请求项目管理者审核，如何更好地将创建变更日志以通知管理者？ _____<ol class="loweralpha">
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">origin/master..</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">diff-tree</span> <span class="pre">origin/master..</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">request-pull</span> <span class="pre">origin/master</span> <span class="pre">URL-of-your-repo</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">--stat</span> <span class="pre">origin/master</span></tt></li>
+</ol>
+</li>
+<li>操作HTTPS协议的版本库时报告证书错误，无法继续操作。下面的操作中那个<strong>无效</strong>？ _____<ol class="loweralpha">
+<li>执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">http.sslVerify</span> <span class="pre">false</span></tt> 。</li>
+<li>执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.autocrlf</span> <span class="pre">input</span></tt> 。</li>
+<li>执行 <tt class="docutils literal"><span class="pre">export</span> <span class="pre">GIT_SSL_NO_VERIFY=true</span></tt> 。</li>
+<li>换用 SSH 或者 HTTP 协议。</li>
+</ol>
+</li>
+<li>当一个提交说明显示为 <tt class="docutils literal"><span class="pre">souce</span> <span class="pre">code</span> <span class="pre">refactor</span> <span class="pre">(see</span> <span class="pre">#529)</span></tt> ，下面哪个说法是正确的？ _____<ol class="loweralpha">
+<li>这个提交和项目的缺陷跟踪平台（如Redmine）关联。</li>
+<li>这个提交和项目的缺陷跟踪平台（如Redmine）关联，并会更新相关问题的状态。</li>
+<li>这个提交修正了第529号提交，没有改变版本库的提交历史。</li>
+<li>这个提交撤销了第529号提交，改变了版本库的提交历史。</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Git练习题（B）</a><ul>
+<li><a class="reference internal" href="#id1">单项选择题</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="exam01.html"
+                        title="previous chapter">Git练习题（A）</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="sources/exam02.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="exam01.html" title="Git练习题（A）"
+             >previous</a> |</li>
+        <li><a href="index.html">Git Exam 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Jiang Xin.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

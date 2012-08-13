@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Git练习题（A） &mdash; Git Exam 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="static/default.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <link rel="top" title="Git Exam 1.0 documentation" href="index.html" />
+    <link rel="next" title="Git练习题（B）" href="exam02.html" />
+    <link rel="prev" title="练习题" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="exam02.html" title="Git练习题（B）"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="练习题"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Git Exam 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="git-a">
+<h1>Git练习题（A）<a class="headerlink" href="#git-a" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>单项选择题<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>如果提示提交内容为空、不能提交，则最为合适的处理方式是：_____<ol class="loweralpha">
+<li>执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> 查看状态，再执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></tt> 命令选择要提交的文件，然后提交。</li>
+<li>执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--allow-empty</span></tt> ，允许空提交。</li>
+<li>执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span></tt> ，提交所有改动。</li>
+<li>执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--amend</span></tt> 进行修补提交。</li>
+</ol>
+</li>
+<li>如果把项目中文件 <tt class="docutils literal"><span class="pre">hello.c</span></tt> 的内容破坏了，如何使其还原至原始版本？ _____<ol class="loweralpha">
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--</span> <span class="pre">hello.c</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">HEAD</span> <span class="pre">--</span> <span class="pre">hello.c</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">revert</span> <span class="pre">hello.c</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">update</span> <span class="pre">hello.c</span></tt></li>
+</ol>
+</li>
+<li>修改的文档 <tt class="docutils literal"><span class="pre">meeting.doc</span></tt> 尚未提交，因为错误地执行了 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span></tt> 导致数据丢失。丢失的数据能找回么？ _____<ol class="loweralpha">
+<li>不能。执行硬重置使工作区文件被覆盖，导致数据丢失无法找回。</li>
+<li>能。可以通过 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">HEAD&#64;{1}</span> <span class="pre">--</span> <span class="pre">meeting.doc</span></tt> 找回。</li>
+<li>不确定。如果在重置前执行了 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></tt> 命令将 <tt class="docutils literal"><span class="pre">meeting.doc</span></tt> 加入了暂存区，则可以在对象库中处于悬空状态的文件中找到。</li>
+<li>不能。因为未提交所以无法找回。</li>
+</ol>
+</li>
+<li>仅将工作区中修改的文件添加到暂存区（新增文件不添加），以备提交，用什么命令标记最快？ _____<ol class="loweralpha">
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-p</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-i</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-u</span></tt></li>
+</ol>
+</li>
+<li>下面哪一个命令<strong>不</strong>会改变提交历史？ _____<ol class="loweralpha">
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">HEAD~1</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">HEAD^^</span> <span class="pre">.</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">-i</span> <span class="pre">HEAD^^</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--amend</span></tt></li>
+</ol>
+</li>
+<li>我使用和其他人不一样的IDE软件，总是在目录下生成以 <tt class="docutils literal"><span class="pre">.xx</span></tt> 为后缀的临时文件。如何避免由于自己的误操作导致此类文件被添加到版本库中呢？ _____<ol class="loweralpha">
+<li>执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">clean</span> <span class="pre">-f</span></tt> 删除临时性文件。</li>
+<li>向版本库中添加一个 <tt class="docutils literal"><span class="pre">.gitignore</span></tt> 文件，其中包含一条内容为 <tt class="docutils literal"><span class="pre">*.xx</span></tt> 的记录。</li>
+<li>在文件 <tt class="docutils literal"><span class="pre">.git/info/exclude</span></tt> 中添加一条内容为 <tt class="docutils literal"><span class="pre">*.xx</span></tt> 的记录。</li>
+<li>更换另外一款IDE软件。</li>
+</ol>
+</li>
+<li>项目跨平台导致文件中的换行符不一致。其中有 Linux 格式换行符（0A），也有DOS格式换行符（0D 0A）。要如何避免此类情况呢？ _____<ol class="loweralpha">
+<li>修改 <tt class="docutils literal"><span class="pre">/etc/gitattributes</span></tt> 文件，在其中包含一条内容为 <tt class="docutils literal"><span class="pre">*</span> <span class="pre">text=auto</span></tt> 的设置。</li>
+<li>执行命令 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.autocrlf</span> <span class="pre">true</span></tt> 。</li>
+<li>执行命令 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.autocrlf</span> <span class="pre">input</span></tt> 。</li>
+<li>向版本库中添加一个 <tt class="docutils literal"><span class="pre">.gitattributes</span></tt> 文件，在其中包含一条内容为 <tt class="docutils literal"><span class="pre">*</span> <span class="pre">text=auto</span></tt> 的设置。</li>
+</ol>
+</li>
+<li>下列对于版本库授权说法正确的是：_____<ol class="loweralpha">
+<li>可以为分支或路径设置不同的写入权限，但不能设置不同的读取权限。</li>
+<li>除管理员外，版本库的创建者都可以为自己创建的版本库授权。</li>
+<li>只要通过授权后，便不能限制所推送的提交的署名作者，可以是任何人。</li>
+<li>如果没有向版本库的写入权限，就一定没有读取权限。</li>
+</ol>
+</li>
+<li>取消服务器版本库中ID为 <tt class="docutils literal"><span class="pre">a2387</span></tt> 的提交，而且不能引起历史提交的变更，用什么操作？ _____<ol class="loweralpha">
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">-i</span> <span class="pre">a2387^</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">a2387^</span> <span class="pre">--</span> <span class="pre">.</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">revert</span> <span class="pre">a2387</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">a2387^</span></tt></li>
+</ol>
+</li>
+<li>从版本库中的历史提交中彻底移除ID为 <tt class="docutils literal"><span class="pre">a2387</span></tt> 的提交，用什么操作？ _____<ol class="loweralpha">
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">a2387^</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">a2387^</span> <span class="pre">--</span> <span class="pre">.</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">revert</span> <span class="pre">a2387</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">--onto</span> <span class="pre">a2387^</span> <span class="pre">a2387</span> <span class="pre">HEAD</span></tt></li>
+</ol>
+</li>
+<li>所有改动的文件都已加入暂存区，若希望将其中的 <tt class="docutils literal"><span class="pre">other.py</span></tt> 文件下次再提交，如何操作？ _____<ol class="loweralpha">
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--</span> <span class="pre">other.py</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">--</span> <span class="pre">other.py</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">HEAD</span> <span class="pre">other.py</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">--</span> <span class="pre">other.py</span></tt></li>
+</ol>
+</li>
+<li>若产品的版本号显示为 <tt class="docutils literal"><span class="pre">1.7.10.rc0-33-g9678d-dirty</span></tt> ，可以判断出此版本号是如何生成的么？ _____<ol class="loweralpha">
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">tag</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">describe</span> <span class="pre">--tags</span> <span class="pre">--always</span> <span class="pre">--dirty</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">name-rev</span> <span class="pre">HEAD</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">--version</span></tt></li>
+</ol>
+</li>
+<li>关于 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span></tt> 下面说法<strong>错误</strong>的是：_____<ol class="loweralpha">
+<li>克隆时所有分支均被克隆，但只有HEAD指向的分支被检出。</li>
+<li>可以通过 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">--single-branch</span></tt> 命令实现只克隆一个分支。</li>
+<li>克隆出的工作区中执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">log</span></tt>、<tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt>、<tt class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span></tt>、<tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></tt>等操作不会去访问远程版本库。</li>
+<li>克隆时只有远程版本库HEAD指向的分支被克隆。</li>
+</ol>
+</li>
+<li>关于删除分支 <tt class="docutils literal"><span class="pre">XX</span></tt> ，下列说法正确的是： _____<ol class="loweralpha">
+<li>执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">:XX</span></tt> 来删除远程版本库的 <tt class="docutils literal"><span class="pre">XX</span></tt> 分支。</li>
+<li>执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-D</span> <span class="pre">XX</span></tt> 删除分支，总是能成功。</li>
+<li>远程版本库删除的分支，在执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">fetch</span></tt> 时本地分支自动删除。</li>
+<li>本地删除的分支，执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></tt> 时，远程分支亦自动删除。</li>
+</ol>
+</li>
+<li>下面的操作中哪一个不能确认维护分支 <tt class="docutils literal"><span class="pre">maint</span></tt> 上所有的 bugfix 提交均已合并至当前分支 <tt class="docutils literal"><span class="pre">master</span></tt> 中。 _____<ol class="loweralpha">
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">rev-list</span> <span class="pre">..maint</span></tt> 的输出为空。</li>
+<li>在 <tt class="docutils literal"><span class="pre">maint</span></tt> 分支成功地执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">master</span></tt>。</li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">..maint</span></tt> 的输出为空。</li>
+<li>新版本发布，在 <tt class="docutils literal"><span class="pre">maint</span></tt> 分支执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">--ff-only</span> <span class="pre">master</span></tt> 成功。</li>
+</ol>
+</li>
+<li>一个图片文件 <tt class="docutils literal"><span class="pre">logo.png</span></tt> 冲突了，如何取出他人的版本。 _____<ol class="loweralpha">
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">show</span> <span class="pre">:1:./logo.png</span> <span class="pre">&gt;</span> <span class="pre">logo.png-theirs</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">show</span> <span class="pre">:2:./logo.png</span> <span class="pre">&gt;</span> <span class="pre">logo.png-theirs</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">show</span> <span class="pre">:3:./logo.png</span> <span class="pre">&gt;</span> <span class="pre">logo.png-theirs</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">show</span> <span class="pre">:0:./logo.png</span> <span class="pre">&gt;</span> <span class="pre">logo.png-theirs</span></tt></li>
+</ol>
+</li>
+<li>工作在特性分支，常常因为执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></tt> 默认推送所有本地和远程共有分支，导致非当前分支报告 non-fast-forward 错误。如果设置只推送当前分支可避免此类问题。下面操作正确的是：_____<ol class="loweralpha">
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">push.default</span> <span class="pre">upstream</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">pull.rebase</span> <span class="pre">true</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">receive.denyDeletes</span> <span class="pre">true</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">pager.status</span> <span class="pre">true</span></tt></li>
+</ol>
+</li>
+<li>关于对象库（.git/objects）说法<strong>错误</strong>的是：_____<ol class="loweralpha">
+<li>两个内容相同文件名不同的文件，在对象库中仅有一个拷贝。</li>
+<li>对象库执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">gc</span></tt> 操作后，reflog 会被清空导致其中记录的未跟踪提交及指向的文件被丢弃。</li>
+<li>删除文件后，再通过添加相同文件找回，不会造成版本库的冗余。</li>
+<li>对象库并非一直保持最优存储，而是通过周期性地执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">gc</span></tt> 优化版本库。</li>
+</ol>
+</li>
+<li>关于子模组<strong>错误</strong>的说法是：_____<ol class="loweralpha">
+<li>克隆父版本库，默认不会克隆子模组版本库。</li>
+<li>子模组可以嵌套。执行 <tt class="docutils literal"><span class="pre">git</span> <span class="pre">submodule</span> <span class="pre">update</span> <span class="pre">--recursive</span></tt> 可对嵌套子模组进行更新。</li>
+<li>子模组和父版本库的新提交，要先推送父版本库，后推送子模组。</li>
+<li>子模组检出处于分离头指针状态（gitlink的指向），在子模组中工作需要手动切换分支。</li>
+</ol>
+</li>
+<li>当一个提交说明显示为 <tt class="docutils literal"><span class="pre">souce</span> <span class="pre">code</span> <span class="pre">refactor</span> <span class="pre">(fix</span> <span class="pre">#529)</span></tt> ，下面哪个说法是正确的？ _____<ol class="loweralpha">
+<li>这个提交只是代码重构，并未修复任何东西，因此没有改变版本库的提交历史。</li>
+<li>这个提交修正了第529号提交，没有改变版本库的提交历史。</li>
+<li>这个提交撤销了第529号提交，改变了版本库的提交历史。</li>
+<li>这个提交和项目的缺陷跟踪平台（如Redmine）关联，并会更新相关问题的状态。</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Git练习题（A）</a><ul>
+<li><a class="reference internal" href="#id1">单项选择题</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">练习题</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="exam02.html"
+                        title="next chapter">Git练习题（B）</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="sources/exam01.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="exam02.html" title="Git练习题（B）"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="练习题"
+             >previous</a> |</li>
+        <li><a href="index.html">Git Exam 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Jiang Xin.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
