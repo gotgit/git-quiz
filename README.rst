@@ -6,8 +6,22 @@
 
  * http://loveky2012.blogspot.jp/2012/08/git-knowledge-test-answer.html\ [#]_
 
+既然问卷A已经没有了神秘感，就把问卷B也拿出来。您可以通过
+
+* 克隆版本库，
+
+  ::
+
+    $ git clone git://github.com/gotgit/git-quiz.git
+
+* 或者直接访问网址：
+
+  http://www.worldhello.net/git-quiz/
+
+看到完整的测试题。
+
 问卷B和问卷A的相似度非常高，就请保留一些神秘性吧，好让问卷B能够承担一些\
-自测功能。\ *尝试解答问卷B是毫无必要和没有技术含量的。*
+自测功能。\ *公开问卷B的答案是毫无必要和没有技术含量的。*
 
 BTW，问卷的设计是在北京到深圳的飞机上匆匆完成的，对我来说为错误答案而凑数\
 是最花脑筋的，不严谨之处敬请谅解。
